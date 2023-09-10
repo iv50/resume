@@ -1,0 +1,90 @@
+<div>
+    <main>   
+        <h1>{{name}}</h1>
+        <div>
+            <p> <b>{{description}}</b> </p>
+        </div>
+        <div> <b>{{history.founder}} {{history.year}} </b></div>
+        <hr>
+
+        {{> title data="Types" }}
+        <div>
+            <ul>
+                <button type="button" class="btn btn-primary">Number</button>
+                <button type="button" class="btn btn-primary">String</button>
+                <button type="button" class="btn btn-primary">Boolean</button>
+                <button type="button" class="btn btn-primary">Null</button>
+                <button type="button" class="btn btn-warning">Undefined</button>
+                <button type="button" class="btn btn-warning">Symbol</button>
+                <button type="button" class="btn btn-warning">Object</button>
+                {{!-- {{#each types}}
+                <li> {{this}} </li>
+                {{/each}} --}}
+            </ul>
+        </div>
+        <br>
+        {{> title data="Syntax" }}       
+        <div>
+            <ul>
+            {{#with syntax}}
+            <div> <b> Variables: </b> {{variables}} </div>
+            <div> <b> Functions: </b> {{functions}} </div>
+            <div> <b> Conditionals: </b> {{conditionals}} </div>
+            <div> <b> Loops: </b> {{loops}} </div>
+            <div> <b> Classes: </b> {{classes}} </div>
+            {{/with}}
+            </ul>
+        </div>       
+        <br>
+        {{> title data="Features" }}
+        <div>
+            <ul>
+                {{#each features}}
+                <li> {{this}} </li>
+                {{/each}}
+            </ul>
+        </div>
+        <br>
+        {{> title data="Libraries" }}
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <ul>
+                <button type="button" class="btn btn-outline-success">jQuery</button>
+                <button type="button" class="btn btn-outline-danger">React</button>
+                <button type="button" class="btn btn-outline-success">Angular</button>
+                <button type="button" class="btn btn-outline-danger">Vue</button>
+            </ul>
+        </div>
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <ul>
+                <button type="button" class="btn btn-outline-success">Node.js</button>
+                <button type="button" class="btn btn-outline-danger">Express.js</button>
+                <button type="button" class="btn btn-outline-success">Lodash</button>
+                <button type="button" class="btn btn-outline-danger">Moment.js</button>
+            </ul>
+        </div>
+        <br>
+        {{> title data="Tools" }}
+        <div>
+            <ul>
+                <button type="button" class="btn btn-primary">Babel</button>
+                <button type="button" class="btn btn-primary">Webpack</button>
+                <button type="button" class="btn btn-primary">ESLint</button>
+                <button type="button" class="btn btn-primary">Jest</button>
+                <button type="button" class="btn btn-warning">Mocha</button>
+                <button type="button" class="btn btn-warning">Chain</button>
+                <button type="button" class="btn btn-warning">Selenium</button>
+                <button type="button" class="btn btn-warning">Cypress</button>
+            </ul>
+        </div>
+        <br>
+        <hr>
+        <div>
+            <button type="button" class="btn btn-link">Stack Overflow</button> (forum)
+            <button type="button" class="btn btn-link">JavaScript Weekly</button> (newsletter)
+            <button type="button" class="btn btn-link">The Changelog</button> (podcast)
+            <button type="button" class="btn btn-link">CSS-Tricks</button> (blog)
+        </div>
+    </main>
+          
+    
+</div>
