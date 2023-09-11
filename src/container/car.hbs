@@ -1,0 +1,166 @@
+<div>
+    <main>   
+        <h1>{{make}} "{{model}}"</h1>
+        <div>
+            <em>{{year}} {{color}} </em>
+        </div>       
+        <hr>
+        {{> title data="Features" }}
+        <br>        
+        <div>
+        {{#with features}}           
+            <ul>
+                {{#with interior}}                
+                    <div><strong> Interior</strong></div>
+                    <ul>
+                        {{#with seats}}
+                            <div><em>Seats:</em></div>
+                            <ul>
+                                <div>
+                                    {{material}}, {{color}},
+                                    {{#if heated}} heated  {{/if}},
+                                    {{#if ventilated}} ventilated  {{/if}}
+                                </div>
+                            </ul>
+                        {{/with}}
+                        {{#with dashboard}}                    
+                            <div><em>Dashboard:</em></div>
+                            <ul>
+                                <div>
+                                    {{material}}, {{color}},
+                                    {{#with display}}
+                                    {{type}}, {{size}}, {{resolution}}, 
+                                    {{#if touchscreen}} touchscreen {{/if}}                              
+                                    {{/with}}                                                        
+                                </div>                    
+                            </ul>                
+
+                        {{/with}}
+                        {{#with audio}}                    
+                            <div><em>Audio:</em></div>
+                            <ul>
+                                <div>
+                                    {{system}}, {{speakers}},
+                                    {{#if subwoofer}} subwoofer {{/if}},
+                                    {{#if bluetooth}} bluetooth {{/if}},                              
+                                    {{#if USB}} USB {{/if}}                                                      
+                                </div>                    
+                            </ul>                
+
+                        {{/with}}
+                    </ul>
+                {{/with}}
+                <br>           
+                <div><strong> Exterior</strong></div>
+                {{#with exterior}}
+                <ul>
+                    <div><em>Wheels:</em></div>
+                    {{#with wheels}}
+                        <ul>
+                            <div>
+                                {{size}}, {{type}}, {{color}}
+                            </div>
+                        </ul>
+                    {{/with}}
+                    <div><em>Headlights:</em></div>
+                    {{#with headlights}}
+                        <ul>
+                            <div>
+                                {{type}}, {{brightness}},
+                                {{#if automatic}} automatic {{/if}} 
+                            </div>
+                        </ul>
+                    {{/with}}
+                    <div><em>Sunroof:</em></div>
+                    {{#with sunroof}}
+                        <ul>
+                            <div>
+                                {{type}}, {{size}},
+                                {{#if automatic}} automatic {{/if}} 
+                            </div>
+                        </ul>
+                    {{/with}}
+                </ul>
+                {{/with}}
+                <br>
+                <div><strong> Safety</strong></div>
+                {{#with safety}}
+                    <ul>
+                        <div><em>Airbags:</em></div>
+                        {{#with airbags}}
+                            <ul>
+                                <div>
+                                    front: {{front}},
+                                    side: {{side}},
+                                    knee: {{knee}},
+                                    rear: {{rear}}
+                                </div>                              
+                            </ul>
+                        {{/with}}
+                        <div><em>Assistance:</em></div>
+                        {{#with assistance}}
+                            <ul>
+                                <div>{{#if blind_spot_monitoring}} blind_spot_monitoring {{/if}}</div>
+                                <div>{{#if rear_cross_traffic_alert}} rear_cross_traffic_alert {{/if}}</div>
+                                <div>{{#if lane_departure_warning}} lane_departure_warning {{/if}}</div>
+                                <div>{{#if adaptive_cruise_control}} adaptive_cruise_control {{/if}}</div>
+                                <div>{{#if blind_spot_monitoring}} blind_spot_monitoring {{/if}}</div> 
+                            </ul>                           
+                        {{/with}}
+                    </ul>
+                {{/with}}                
+            </ul>            
+        {{/with}}        
+        </div>
+        <br>
+        <ul>
+            <div><strong> Engine</strong></div>
+            {{#with engine}}
+            <ul>
+                <div> type: {{type}}</div>
+                <div> displacement: {{displacement}}</div>
+                <div> horsepower: {{horsepower}}</div>
+                <div> torque: {{torque}}</div>
+                <div> transmission: {{transmission.type}}, {{transmission.gears}} </div>                
+            </ul>
+            {{/with}}
+            <div><strong> Fuel_economy</strong></div>
+            {{#with fuel_economy}}
+            <ul>
+                <div> city: {{city}}</div>
+                <div> highway: {{highway}}</div>
+                <div>  combined: {{ combined}}</div>                
+            </ul>
+            {{/with}}
+            <br>
+            {{> title data="Price" }}
+            <ul>
+                {{#with price}}
+                    <ul>
+                        <div> base: {{base}}</div>
+                        <div> destination: {{destination}}</div>
+                        <div> options: </div>
+                            <ul>
+                                <div> navigation: {{options.navigation}}</div>
+                                <div> moonroof: {{options.moonroof}}</div>
+                                <div> premium_paint: {{options.premium_paint}}</div>
+                            </ul>
+                    </ul>
+                    <br>
+                    <ul>
+                    <div> <b> Total {{total}}</b></div>
+                    </ul>
+                {{/with}}
+                
+            </ul>
+
+        </ul>
+
+
+
+
+        
+    </main>
+          
+    
+</div>
