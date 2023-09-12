@@ -1,0 +1,52 @@
+<div>
+    <main>   
+        <h1>{{name}} </h1>
+        <hr>
+        {{> title data="Users" }}
+            {{#each users}}
+            {{> facebook }}
+                    {{#each friends}}
+                    {{> facebook }}
+                        {{#each mutual_friends}}
+                        {{> facebook}}
+                            {{#each mutual_friends}}
+                            {{> facebook}}
+                            
+                            {{/each}}
+                            
+                        {{/each}}
+
+                        {{#each groups}}
+                        <ul>
+                            <p>
+                            <div> id: <b> {{id}} </b></div>
+                            <div> name: <b> {{name}} </b></div>
+                            <div> description: <b> {{description}} </b></div>                        
+                            </p>
+                        </ul>
+                            {{#each members}}
+                            {{> facebook}}
+                            {{/each}}
+                        {{/each}}
+                        
+                    {{/each}}
+
+                    {{#each groups}}
+                        <ul>
+                            <p>
+                            <div> id: <b> {{id}} </b></div>
+                            <div> name: <b> {{name}} </b></div>
+                            <div> description: <b> {{description}} </b></div>                        
+                            </p>
+                        </ul>
+                            {{#each members}}
+                            {{> facebook}}
+                            {{/each}}
+                    {{/each}}
+
+            {{/each}}
+        
+        
+               
+    </main>   
+</div>
