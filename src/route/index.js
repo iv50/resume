@@ -211,7 +211,7 @@ router.get('/work', function (req, res) {
 router.get('/person', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('person', {
-    loyout: 'person',
+    layout: 'person',
 
     person: {
       name: 'Emma Johnson',
@@ -316,7 +316,7 @@ router.get('/js', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('js', {
-    loyout: 'big',
+    layout: 'big',
 
     name: 'JavaScript',
     description:
@@ -400,7 +400,7 @@ router.get('/car', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('car', {
-    loyout: 'big',
+    layout: 'big',
     make: 'Toyota',
     model: 'Camry',
     year: 2022,
@@ -498,7 +498,7 @@ router.get('/car', function (req, res) {
 router.get('/bio', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('bio', {
-    loyout: 'bio',
+    layout: 'bio',
     name: 'Albert Einstein',
     birthdate: 'March 14, 1879',
     birthplace:
@@ -598,7 +598,7 @@ router.get('/mac', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('mac', {
-    loyout: 'big',
+    layout: 'big',
     name: 'Apple MacBook Pro',
     description: 'The ultimate notebook for power users',
     price: 1999.99,
@@ -688,7 +688,7 @@ router.get('/facebook', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('facebook', {
-    loyout: 'big',
+    layout: 'big',
     name: 'Facebook',
     users: [
       {
@@ -844,7 +844,7 @@ router.get('/facebook', function (req, res) {
 router.get('/program', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('program', {
-    loyout: 'program',
+    layout: 'program',
     program: {
       excursion: {
         name: 'Cultural Tour',
@@ -929,7 +929,7 @@ router.get('/program', function (req, res) {
 router.get('/web', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('web', {
-    loyout: 'basic',
+    layout: 'basic',
     web: {
       languages: [
         {
