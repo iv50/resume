@@ -1,0 +1,295 @@
+<div>
+  <main > 
+    {{#with navigation}}   
+      <div class="row g-2">        
+        <div class="col-6 m-5">
+            <div class=" nav  nav-tabs">
+                {{#each links}}                
+                  <div class="nav-item">                
+                    <a href={{href}} class="nav-link "> {{text}}</a>                
+                  </div>                 
+                {{/each}}      
+            </div>
+        </div>
+      </div>
+    {{/with}}
+     <h1>Оформлення замовлення</h1> 
+    <div class="row">
+      <section class="col-8 my-3">
+        {{#with contacts_data}}
+          <h2 class="mb-4"> {{title}} </h2>
+          <div class="row g-3">       
+            {{#each buttons}}
+              <div class="col-6">
+                <button href="#" class="btn {{#if isPrimary}} btn-warning {{/if}}
+                {{#if isOutline}} btn-outline-warning {{/if}} mb-2">{{text}}
+                </button>                
+              </div>
+            {{/each}}
+          </div>
+          {{#with form}}
+            <div  class="row g-2">
+              {{#with input}}              
+                <div class="col-6">
+                  {{#with surname}}        
+                    <label class="form-label">{{label}}</label>
+                    <input class="form-control">
+                    <div class="form-text text-danger">{{caption}}</div>
+                  {{/with}}
+                </div>
+                <div class="col-6">
+                  {{#with name}}        
+                    <label class="form-label">{{label}}</label>
+                    <input class="form-control">
+                    <div class="form-text text-danger">{{caption}}</div>
+                  {{/with}}
+                </div>
+                <div class="col-6">
+                  {{#with phone}}        
+                    <label class="form-label">{{label}}</label>
+                    <input class="form-control">
+                    <div class="form-text text-danger">{{caption}}</div>
+                  {{/with}}
+                </div>
+                <div class="col-6">
+                  {{#with  email}}        
+                    <label class="form-label">{{label}}</label>
+                    <input class="form-control">
+                    <div class="form-text text-danger">{{caption}}</div>
+                  {{/with}}
+                </div> 
+              {{/with}}
+              <hr>
+                <div class="col-12">        
+                    {{#each switch}}
+                  <div class="form-check form-switch mb-2 ">                   
+                    <label class="form-check-label {{#if isActive}} active  {{/if}}">{{text}}</label>
+                    <input name="switch" type="checkbox" class="form-check-input ">                 
+                  </div>
+                  {{/each}}
+                </div>
+                 <hr>
+            </div>
+          {{/with}}
+        {{/with}}
+        {{#with delivery}}
+        <h2 class="mb-3"> {{title}} </h2>
+          <div class="card p-2 mb-3">
+            <div class="row">
+              {{#each select}}          
+                <div class="col-6 mb-2">
+                  <div>
+                    <label class="form-label "> {{label}} </label>
+                    <select  class="form-select form-select-sm">
+                      <option selected>{{placeholder}}</option>
+                      {{#each options}}
+                      <option value={{value}}>{{text}}</option>                  
+                      {{/each}}
+                    </select>
+                  </div>
+                </div>          
+              {{/each}}              
+            </div>
+          </div>
+          {{#each delivery_type}}
+          <div class="col-12 ">
+            <div class="form-label"></div>
+            <div class="form-check ">
+              <label class="form-check-label">{{type}}</label>
+              <input name="food" type="radio" class="form-check-input">
+            </div>
+          </div>
+          {{/each}}
+          <hr>
+          {{#with payment}}
+          <h2 class="mb-3"> {{title}} </h2>
+            {{#each list}}
+              <div class="col-12 ">
+                <div class="form-label"></div>
+                <div class="form-check ">
+                  <label class="form-check-label">{{type}}</label>
+                  <input name="food" type="radio" class="form-check-input">
+                </div>
+                <div class="sm"> {{description}} </div>
+              </div>
+            {{/each}}
+          {{/with}}
+          <hr>
+          <div class="row">
+            {{#with contact}}
+              <h2 class="mb-3"> {{title}} </h2>              
+                <div class="col-6">
+                  {{#with surname}}        
+                    <label class="form-label">{{label}}</label>
+                    <input class="form-control">
+                    <div class="form-text text-danger">{{caption}}</div>
+                  {{/with}}
+                </div>
+                <div class="col-6">
+                  {{#with name}}        
+                    <label class="form-label">{{label}}</label>
+                    <input class="form-control">
+                    <div class="form-text text-danger">{{caption}}</div>
+                  {{/with}}
+                </div>
+                <div class="col-6">
+                  {{#with phone}}        
+                    <label class="form-label">{{label}}</label>
+                    <input class="form-control">
+                    <div class="form-text text-danger">{{caption}}</div>
+                  {{/with}}
+                </div>
+                <div class="col-6">
+                  {{#with  email}}        
+                    <label class="form-label">{{label}}</label>
+                    <input class="form-control">
+                    <div class="form-text text-danger">{{caption}}</div>
+                  {{/with}}
+                </div> 
+            {{/with}}
+          </div>
+          <hr>
+          <label class="form-label">{{coment.label}}</label>
+          <input class="form-control">
+          
+          <hr>
+
+          
+
+
+
+
+        {{/with}}
+
+        {{#with coupon}}
+          <h2 class="mb-3"> {{title}} </h2>
+          {{#with select}}
+            {{#with availabel_coupon}}          
+              <div class="col-12 mb-2">
+                <div>
+                  <label class="form-label "> {{label}} </label>
+                  <select  class="form-select form-select-sm">
+                    <option selected>{{placeholder}}</option>
+                    {{#each options}}
+                    <option value={{value}}>{{text}}</option>                  
+                    {{/each}}
+                  </select>
+                  
+                </div>
+              </div>
+            {{/with}}
+            {{#with friend_coupon}}          
+              <div class="col-12 mb-2">
+                <div>
+                  <label class="form-label "> {{label}} </label>
+                  <select  class="form-select form-select-sm">
+                    <option selected>{{placeholder}}</option>
+                    {{#each options}}
+                    <option value={{value}}>{{text}}</option>                  
+                    {{/each}}
+                  </select>
+                  
+                </div>
+              </div>
+            {{/with}}          
+          {{/with}}
+          {{#with add}}            
+              <div class="col-12">
+                {{#with friend}}        
+                  <label class="form-label">{{label}}</label>
+                  <input class="form-control">
+                  <div class="form-text text-danger">{{caption}}</div>
+                {{/with}}
+              </div>
+              <div class="col-12">
+                {{#with colleague}}        
+                  <label class="form-label">{{label}}</label>
+                  <input class="form-control">
+                  <div class="form-text text-danger">{{caption}}</div>
+                {{/with}}
+              </div>
+          {{/with}}
+
+
+            
+        {{/with}}
+
+        
+          
+
+        
+
+
+
+        {{!-- <div class="col-12">
+          <div class="form-label">Selest food</div>
+
+          <div class="form-check">
+            <label class="form-check-label">Apple</label>
+            <input name="food" type="radio" class="form-check-input">
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">Oragne</label>
+            <input name="food" type="radio" class="form-check-input">
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">Banan</label>
+            <input name="food" type="radio" class="form-check-input">
+          </div>
+        </div> --}}
+
+      </section>
+
+      
+
+      <section class="col-4">        
+        <div class="card mb-3">
+          <div class="card-body">
+            <div class="nav flex-column">
+              {{#each action_block}}
+                <div class="nav-item mb-2">                
+                  <div class="card">
+                    <a href="#" class="nav-link {{#if isSuccess}}text-bg-success {{/if}}
+                    {{#if isDanger}}text-bg-danger {{/if}}
+                    {{#if isInfo}}text-bg-info {{/if}}"> {{text}}
+                    </a>
+                  </div>       
+                </div>
+              {{/each}}        
+            </div>
+          </div>
+        </div>
+        {{#with total}}        
+          <div class="card p-2">
+            <h2 class="mb-2"> {{title}} </h2>  
+            {{#each item_list}}
+              <div> {{name}}: {{price}} </div>
+            {{/each}}
+            <hr>
+            {{#each additional_info}}
+              <div> {{text}}: {{value}} </div>
+            {{/each}}
+            <hr>
+            {{#with total_price}}
+              <div> {{text}}: {{value}} </div>
+            {{/with}}
+            <hr>
+            {{#each button}}
+              <button href="#" class="btn {{#if isPrimary}} btn-primary {{/if}} 
+              {{#if isOutline}} btn-outline-primary {{/if}} m-2">{{text}}</button>
+            {{/each}}
+          </div>
+        {{/with}}
+       
+     
+      </section>
+     
+    </div>
+
+
+
+    
+  </main>
+</div>
+
+
