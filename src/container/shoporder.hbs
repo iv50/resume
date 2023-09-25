@@ -33,28 +33,28 @@
                 <div class="col-6">
                   {{#with surname}}        
                     <label class="form-label">{{label}}</label>
-                    <input class="form-control">
+                    <input placeholder="{{placeholder}}" class="form-control">
                     <div class="form-text text-danger">{{caption}}</div>
                   {{/with}}
                 </div>
                 <div class="col-6">
                   {{#with name}}        
                     <label class="form-label">{{label}}</label>
-                    <input class="form-control">
+                    <input placeholder="{{placeholder}}" class="form-control">
                     <div class="form-text text-danger">{{caption}}</div>
                   {{/with}}
                 </div>
                 <div class="col-6">
                   {{#with phone}}        
                     <label class="form-label">{{label}}</label>
-                    <input class="form-control">
+                    <input placeholder="{{placeholder}}" class="form-control">
                     <div class="form-text text-danger">{{caption}}</div>
                   {{/with}}
                 </div>
                 <div class="col-6">
                   {{#with  email}}        
                     <label class="form-label">{{label}}</label>
-                    <input class="form-control">
+                    <input placeholder="{{placeholder}}" class="form-control">
                     <div class="form-text text-danger">{{caption}}</div>
                   {{/with}}
                 </div> 
@@ -121,28 +121,28 @@
                 <div class="col-6">
                   {{#with surname}}        
                     <label class="form-label">{{label}}</label>
-                    <input class="form-control">
+                    <input placeholder="{{placeholder}}" class="form-control">
                     <div class="form-text text-danger">{{caption}}</div>
                   {{/with}}
                 </div>
                 <div class="col-6">
                   {{#with name}}        
                     <label class="form-label">{{label}}</label>
-                    <input class="form-control">
+                    <input placeholder="{{placeholder}}" class="form-control">
                     <div class="form-text text-danger">{{caption}}</div>
                   {{/with}}
                 </div>
                 <div class="col-6">
                   {{#with phone}}        
                     <label class="form-label">{{label}}</label>
-                    <input class="form-control">
+                    <input placeholder="{{placeholder}}" class="form-control">
                     <div class="form-text text-danger">{{caption}}</div>
                   {{/with}}
                 </div>
                 <div class="col-6">
                   {{#with  email}}        
                     <label class="form-label">{{label}}</label>
-                    <input class="form-control">
+                    <input placeholder="{{placeholder}}" class="form-control">
                     <div class="form-text text-danger">{{caption}}</div>
                   {{/with}}
                 </div> 
@@ -168,24 +168,23 @@
               <div class="col-12 mb-2">
                 <div>
                   <label class="form-label "> {{label}} </label>
-                  <select  class="form-select form-select-sm">
+                  <select  class="form-select form-select-lg">
                     <option selected>{{placeholder}}</option>
                     {{#each options}}
                     <option value={{value}}>{{text}}</option>                  
                     {{/each}}
-                  </select>
-                  
+                  </select>                  
                 </div>
               </div>
             {{/with}}
             {{#with friend_coupon}}          
               <div class="col-12 mb-2">
                 <div>
-                  <label class="form-label "> {{label}} </label>
+                  <label class="form-label text-sm"> {{label}} </label>
                   <select  class="form-select form-select-sm">
                     <option selected>{{placeholder}}</option>
                     {{#each options}}
-                    <option value={{value}}>{{text}}</option>                  
+                    <option value={{value}} class="text-sm">{{text}}</option>                  
                     {{/each}}
                   </select>
                   
@@ -196,47 +195,88 @@
           {{#with add}}            
               <div class="col-12">
                 {{#with friend}}        
-                  <label class="form-label">{{label}}</label>
-                  <input class="form-control">
-                  <div class="form-text text-danger">{{caption}}</div>
+                  <label class="form-label text-sm">{{label}}</label>
+                  <input placeholder="{{placeholder}}" class="form-control form-select-sm">
+                  <div class="form-text text-danger ">{{caption}}</div>
                 {{/with}}
               </div>
               <div class="col-12">
                 {{#with colleague}}        
                   <label class="form-label">{{label}}</label>
-                  <input class="form-control">
+                  <input placeholder="{{placeholder}}" class="form-control form-select-lg">
                   <div class="form-text text-danger">{{caption}}</div>
                 {{/with}}
               </div>
           {{/with}}
-
-
-            
+          <hr>            
         {{/with}}
 
-        
-          
+        {{#with quiz}}
+        <h2 class="mb-3"> {{title}} </h2>
+          {{#with preference}}
+          <div>{{title}}</div>
+            {{#each options}}
+            <div class="col-12 ">
+              <div class="form-label"></div>
+              <div class="form-check ">
+                <label class="form-check-label">{{this}}</label>
+                <input name="food" type="radio" class="form-check-input">
+              </div>
+            </div>
+            {{/each}} 
+          {{/with}}
 
-        
-
-
-
-        {{!-- <div class="col-12">
-          <div class="form-label">Selest food</div>
-
-          <div class="form-check">
-            <label class="form-check-label">Apple</label>
-            <input name="food" type="radio" class="form-check-input">
+          <div class="col-12">
+            {{#with your_expirience}}        
+              <label class="form-label mt-2">{{label}}</label>
+              <input  class="form-control ">
+              <div class="form-text text-danger">{{caption}}</div>
+            {{/with}}
           </div>
-          <div class="form-check">
-            <label class="form-check-label">Oragne</label>
-            <input name="food" type="radio" class="form-check-input">
-          </div>
-          <div class="form-check">
-            <label class="form-check-label">Banan</label>
-            <input name="food" type="radio" class="form-check-input">
-          </div>
-        </div> --}}
+
+          {{#with purchase_frequency}}          
+              <div class="col-12 mb-2">
+                <div>
+                  <label class="form-label "> {{label}} </label>
+                  <select  class="form-select ">
+                    <option selected>{{placeholder}}</option>
+                    {{#each options}}
+                    <option value={{value}}>{{text}}</option>                  
+                    {{/each}}
+                  </select>                  
+                </div>
+              </div>
+          {{/with}}
+
+
+          {{#with factors}}
+          <div>{{title}}</div>
+            {{#each options}}
+            <div class="col-12 ">
+              <div class="form-label"></div>
+              <div class="form-check ">
+                <label class="form-check-label">{{this}}</label>
+                <input name="food" type="checkbox" class="form-check-input">
+              </div>
+            </div>
+            {{/each}} 
+          {{/with}}
+
+          <hr>
+
+        {{/with}}
+
+          <div class="nav">
+            {{#each footer}}
+              <div class=" nav-item ">
+                {{#each this}} 
+                <a href={{link}} class="nav-link  {{#if @last}}disabled{{/if}}"> {{text}}</a>
+                {{/each}}
+              </div>
+            {{/each}}
+          </div>   
+
+
 
       </section>
 
